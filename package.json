@@ -1,0 +1,16 @@
+{
+  "name": "cryptocurrency-tracker",
+  "version": "1.0.0",
+  "description": "Returns JSON data about top cryptocurrencies for the client to view",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Ryan Mack",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3"
+  }
+}
