@@ -23,8 +23,28 @@ app.get('/api', (req, res) => {
   // for the API check the documentation:
   //  https://pro.coinmarketcap.com/api/v1#section/Quick-Start-Guide
   const rp = require('request-promise');
+  const requestOptions = {
+    method: 'GET',
+    uri: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
+    qs: {
+      start: 1,
+      limit: 100,
+      convert: 'USD'
+    },
+    headers: {
+      'X-CMC_PRO_API_KEY': process.env.API_KEY
+    },
+    json: true,
+    gzip: true
+  };
 
-  res.send('test');
+  rp(requestOptions)
+  .then(response => {
+    res.json(response);
+  })
+  .catch((err) => {
+    res.send(err.message);
+  });
 });
 
 
