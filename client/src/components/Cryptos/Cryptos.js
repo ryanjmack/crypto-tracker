@@ -1,4 +1,5 @@
 import React from 'react';
+import padDecimal from './utilities/padDecimal';
 //import './Cryptos.css';
 
 
@@ -19,7 +20,7 @@ class Cryptos extends React.Component {
 
       /* we need to do some computation for 'pretty' formatting */
       // 1. Round the price and truncate to two spots. 2 .Convert back to a number to use toLocaleString for commas 3. pad decimal ('1.5' => '1.50')
-      let price = (Number((Math.round(coin.quote.USD.price * 100) / 100).toFixed(2))).toLocaleString();
+      let price = padDecimal((Number((Math.round(coin.quote.USD.price * 100) / 100).toFixed(2))).toLocaleString());
 
       // 1. convert to integer. 2. insert commas using toLocaleString
       let marketCap = (coin.quote.USD.market_cap.toFixed(0)).toLocaleString();
