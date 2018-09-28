@@ -1,12 +1,11 @@
 import React from 'react';
-import './stylesheets/App.css';
+import './App.css';
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>{this.props.txt}</h1>
-        <b>Off</b>
+        <h1>Top Cryptocurrencies by Market Capitalization</h1>
       </div>
     )
   }
