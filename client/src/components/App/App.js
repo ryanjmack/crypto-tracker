@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import Cryptos from '../Cryptos/Cryptos';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -8,12 +10,11 @@ class App extends React.Component {
       data: null
     }
 
-    this.refreshData = this.refreshData.bind(this);
+    this.getData = this.getData.bind(this);
   }
 
 
   componentDidMount() {
-
     // once the component mounts
     this.getData();
   }
@@ -173,6 +174,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Top Cryptocurrencies by Market Capitalization</h1>
+        <Cryptos data={this.state.data} />
       </div>
     )
   }
