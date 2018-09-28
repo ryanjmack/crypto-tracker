@@ -12,12 +12,17 @@ const app       = express();
 
 
 // middleware for serving static files
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/client/build'));
 
 
 /***********************************************************************
 * Routes
 ***********************************************************************/
+app.get('/', (req, res) => {
+  res.sendFile('index.html');
+});
+
+
 app.get('/api', (req, res) => {
 
   // for the API check the documentation:
