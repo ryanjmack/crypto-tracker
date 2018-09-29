@@ -1,6 +1,6 @@
 import React from 'react';
 import padDecimal from './utilities/padDecimal';
-//import './Cryptos.css';
+import './Cryptos.css';
 
 
 class Cryptos extends React.Component {
@@ -16,6 +16,7 @@ class Cryptos extends React.Component {
       return;
     }
 
+
     return this.props.data.map((coin, i) => {
 
       /* we need to do some computation for 'pretty' formatting */
@@ -23,7 +24,7 @@ class Cryptos extends React.Component {
       let price = padDecimal((Number((Math.round(coin.quote.USD.price * 100) / 100).toFixed(2))).toLocaleString());
 
       // 1. convert to integer. 2. insert commas using toLocaleString
-      let marketCap = (coin.quote.USD.market_cap.toFixed(0)).toLocaleString();
+      let marketCap = (Number(coin.quote.USD.market_cap.toFixed(0))).toLocaleString();
 
       // round percentChange to two decimals
       let percentChange = Math.round(coin.quote.USD.percent_change_24h * 100) / 100;
@@ -35,13 +36,12 @@ class Cryptos extends React.Component {
       // in regards to the arbitrary key values - https://stackoverflow.com/a/43892905/6894170
       return (
         <tr key={i + 100}>
-          <td>{coin.cmc_rank}</td>
-          <td>{coin.name}</td>
-          <td>{coin.symbol}</td>
+          <td className="rank">{coin.cmc_rank}</td>
+          <td className="name">{coin.name}</td>
           <td>{`$${price}`}</td>
-          <td>{`$${marketCap}`}</td>
-          <td>{supply}</td>
-          <td className={percentChange < 0 ? 'percent-change--neg' : 'percent-change--pos'}>{`${percentChange}%`}</td>
+          <td className="market-cap">{`$${marketCap}`}</td>
+          <td className="supply">{`${supply} ${coin.symbol}`}</td>
+          <td className={(percentChange < 0 ? 'change--neg' : 'change--pos')  + " change"}>{`${percentChange}%`}</td>
         </tr>
       );
     });
@@ -50,16 +50,15 @@ class Cryptos extends React.Component {
 
   render() {
     return (
-      <table className="Cryptos">
+      <table className="crypto-table">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Symbol</th>
-            <th>Price</th>
-            <th>Market Cap</th>
-            <th>Circulating Supply</th>
-            <th>Change (24h)</th>
+            <th className="rank">#</th>
+            <th className="name">Name</th>
+            <th className="price">Price</th>
+            <th className="market-cap">Market Cap</th>
+            <th className="supply">Circulating Supply</th>
+            <th className="change">Change (24h)</th>
           </tr>
         </thead>
         <tbody>
