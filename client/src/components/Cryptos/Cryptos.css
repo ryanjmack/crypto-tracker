@@ -1,0 +1,65 @@
+/***********************************************************************
+* File that contains variables that components van utilize.
+*
+* Here's an example of the Navbar.scss file importing this file:
+* @import "../../stylesheets/variables.scss";
+***********************************************************************/
+.crypto-table {
+  border-collapse: collapse;
+  font-size: 0.7rem;
+  width: 100%; }
+  @media (min-width: 20em) {
+    .crypto-table {
+      font-size: 0.8rem; } }
+  @media (min-width: 24em) {
+    .crypto-table {
+      font-size: 1rem; } }
+  .crypto-table th, .crypto-table td {
+    padding: 1em 0;
+    text-align: right; }
+    .crypto-table th:first-of-type, .crypto-table td:first-of-type {
+      padding-left: 0.4em; }
+    .crypto-table th:last-of-type, .crypto-table td:last-of-type {
+      padding-right: 0.5em; }
+  .crypto-table th {
+    padding-bottom: 0.5em; }
+  .crypto-table tr {
+    border-bottom: 1px solid #ccc; }
+  .crypto-table tbody tr:nth-of-type(odd) {
+    background-color: #e3f3ff; }
+  .crypto-table .name {
+    font-weight: bold;
+    max-width: 5em;
+    text-align: left; }
+    @media (min-width: 60em) {
+      .crypto-table .name {
+        max-width: 8em; } }
+  .crypto-table .rank {
+    padding-left: 0.5em;
+    text-align: center; }
+  .crypto-table .symbol {
+    text-align: center; }
+  .crypto-table .change--neg {
+    color: #e00000; }
+  .crypto-table .change--pos {
+    color: #00ae00; }
+  .crypto-table .supply {
+    display: none; }
+    @media (min-width: 44em) {
+      .crypto-table .supply {
+        display: table-cell; } }
+  .crypto-table .change {
+    display: none; }
+    @media (min-width: 32em) {
+      .crypto-table .change {
+        display: table-cell; } }
+  .crypto-table .market-cap {
+    padding-right: 0.5em; }
+    @media (min-width: 32em) {
+      .crypto-table .market-cap {
+        padding-right: 0; } }
+  .crypto-table thead .price {
+    padding-right: 0.2em; }
+    @media (min-width: 26em) {
+      .crypto-table thead .price {
+        padding-right: 0; } }

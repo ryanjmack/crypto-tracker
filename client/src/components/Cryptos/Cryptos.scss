@@ -1,0 +1,103 @@
+@import "../../stylesheets/variables.scss";
+
+.crypto-table {
+  border-collapse: collapse;
+  font-size: 0.7rem;
+  width: 100%;
+
+  @media (min-width: 20em) {
+    font-size: 0.8rem;
+  }
+
+  @media (min-width: 24em) {
+    font-size: 1rem;
+  }
+
+  th, td {
+    padding: 1em 0;
+    text-align: right;
+
+    &:first-of-type {
+      padding-left: 0.4em;
+    }
+
+    &:last-of-type {
+      padding-right: 0.5em;
+    }
+  }
+
+  th {
+    padding-bottom: 0.5em;
+  }
+
+  tr {
+    border-bottom: 1px solid #ccc;
+  }
+
+  tbody {
+    tr:nth-of-type(odd) {
+      background-color: $odd-row-background;
+    }
+  }
+
+  .name {
+    font-weight: bold;
+    max-width: 5em;
+    text-align: left;
+
+    @media (min-width: 60em) {
+      max-width: 8em;
+    }
+  }
+
+  .rank {
+    padding-left: 0.5em;
+    text-align: center;
+  }
+
+  .symbol {
+    text-align: center;
+  }
+
+  .change--neg {
+    color: $negative-change;
+  }
+
+  .change--pos {
+    color: $positive-change;
+  }
+
+
+  .supply {
+    display: none;
+
+    @media (min-width: 44em) {
+      display: table-cell;
+    }
+  }
+
+  .change {
+    display: none;
+
+    @media (min-width: 32em) {
+      display: table-cell;
+    }
+
+  }
+
+  .market-cap {
+    padding-right: 0.5em;
+
+    @media (min-width: 32em) {
+      padding-right: 0;
+    }
+  }
+
+  thead .price {
+    padding-right: 0.2em;
+
+    @media (min-width: 26em) {
+      padding-right: 0;
+    }
+  }
+}
