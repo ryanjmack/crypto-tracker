@@ -5,9 +5,9 @@
 export default function padDecimal(s) {
   const i = s.lastIndexOf('.');
 
-  // no decimal leave it as it
+  // no decimal point. Add one.
   if (i === -1) {
-    return;
+    return `${s}.00`;
   }
   // a decimal with only the tens place
   if (s.slice(i + 1).length < 2) {
