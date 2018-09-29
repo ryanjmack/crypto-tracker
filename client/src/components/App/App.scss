@@ -1,3 +1,15 @@
+
 .App {
-  color: blue;
+  font-size: 1rem;
+  padding: 0 0.5em;
+
+  h1 {
+    font-size: 1.4rem;
+    margin: 1.3em 0;
+    text-align: center;
+
+    @media (min-width: 25em) {
+      font-size: 1.75rem;
+    }
+  }
 }
